@@ -1,2 +1,9 @@
-# W_CLIP_KD
-This repository contains Jupyter notebooks and saved models for the project "Knowledge Distillation using Whitened-CLIP".
+# Knowledge Distillation using Whitened-CLIP
+<p align="center">
+  <a href="Docs/W_CLIP_KD_Report.pdf"><b>📄 Read Full Report</b></a>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="Docs/W_CLIP_KD_Presentation.pdf"><b>📊 View Presentation Slides</b></a>
+</p>
+
+## Abstract
+While Vision-Language Models like CLIP have shown excellent zero-shot performance on a variety of computer vision tasks, the huge compute and memory needs of state-of-the-art CLIP models limit their practical deployment on edge devices like IoT sensors. Knowledge Distillation (KD) is a widely used model compression technique that solves this by distilling the essence of a larger teacher model into smaller student models. Although standard KD works reasonably well, we identify that standard KD strategies are hindered by the double-ellipsoid geometry of the teacher CLIP, which forces the student models to learn geometric biases rather than semantic content. In this work, we propose Whitened-CLIP KD, a geometry-aware distillation framework that uses ZCA whitening to transform the teacher's embedding space into an isotropic hypersphere. We hypothesize and validate that this transformation of the teacher's latent space enables significantly faster convergence and superior semantic alignment. Our experiments on MS-COCO (training) and CIFAR-10 (zero-shot evaluation) demonstrate that whitening significantly helps low-capacity students: our whitened MobileNet-V3 student outperforms the raw baseline by over 8% in accuracy, while the ResNet-18 student achieves near-convergence performance in a single epoch. Geometric analysis using t-SNE plots reveals that our method mitigates the modality gap and prevents feature collapse.
